@@ -1,0 +1,39 @@
+<div class="container pb-5">
+  <app-filter
+  [data]="categories"
+  (selected)="selectedCategory($event)"
+  ></app-filter>
+
+  <div class="loader" *ngIf="loader">
+<app-loader></app-loader>
+  </div>
+
+  <div class="row">
+    <div class="p-card col-md-4 col-sm-9 col-lg-3" *ngFor="let prod of allProduct;index as i">
+      <div class="item"  >
+        <div class="img-container">
+          <img [src]="prod.image" alt="">
+<span>{{prod.category}}</span>
+        </div>
+        <div class="body">
+            <h4>{{prod.title}}</h4>
+            <p>${{prod.price}}</p>
+        </div>
+      <div class="buttons px-3 mb-2 d-flex justify-content-between align-items-center">
+        <button *ngIf="!cartClicked[i]" class="btn addToCart" (click)="addToCart(i)">Add to Cart</button>
+        <div class="cart" *ngIf="cartClicked[i]">
+          <button class="btn" (click)="[afterAddToCart(i),updateCart()]">
+            <img src="https://i.postimg.cc/4dxpvMcZ/add-to-cart-8-64.png" alt="">
+          </button>
+          <input type="number" name="" id=""  value="{{quantity[i]}}" min="1" max="10" [(ngModel)]="quantity[i]">
+        </div>
+        <button class="btn " routerLink="/products/product/{{prod.id}}">
+          <img src="https://i.postimg.cc/t7Q1cmss/visible.png" alt="">
+        </button>
+
+        <!-- <span>{{prod.price}} $</span>  -->
+     </div>
+      </div>
+    </div>
+  </div>
+</div>

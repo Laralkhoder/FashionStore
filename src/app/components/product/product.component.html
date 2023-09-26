@@ -1,0 +1,60 @@
+<div class="container" >
+  <div class="back my-3 ">
+    <a class="text-black"
+    routerLink="/products" >
+     <i class="fa fa-arrow-left" aria-hidden="true"></i>
+       Go back
+   </a>
+  </div>
+  <div *ngIf="load">
+    <app-loader></app-loader>
+    </div>
+  <div class="box" *ngIf="!load">
+    <div class="row">
+      <div class="col-lg-6  col-sm-12 img-container">
+          <img src="{{data.image}}" alt="">
+    
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyled">
+          <li class="text-center title"><strong >{{data.title}}</strong></li>
+          <li class="text-danger cate my-4">
+            <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 8183 10061.25" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs><style type="text/css">
+   
+              .fil0 {fill:rgb(212,1,1)}
+             
+            </style></defs><g><polygon class="fil0" points="4092,0 3825,3416 1422,968 3416,3759 0,3428 3323,4285 495,6226 3590,4747 2672,8049 4092,4929 5511,8049 4594,4747 7689,6226 4860,4285 8183,3428 4768,3759 6761,968 4358,3416 "/></g><text x="0" y="8064" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif"></text><text x="0" y="8069" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>{{data.category}}</li>
+        <div class="content ">
+          <div class="">
+            <li class="text-center"><p class="text-black-50">{{data.description}}</p></li>
+          </div>
+          <li class="price mts-4 mb-2">${{data.price}}</li>
+            <li class="rate mb-4">
+              <div class="d-flex flex-column">
+                <ul class="rating inline-ul d-flex">
+                  <li *ngFor="let star of stars"><i class="fa fa-star amber-text"></i></li>
+                  <li *ngFor="let star of emptyStars"><i class="fa fa-star-o amber-text"></i></li>
+              </ul>
+              <div class="count text-black-50">({{data.rating.count}} reviews)
+              </div>
+              </div>
+            <div class="rateNumber">{{rate}}.0/5.0</div>
+
+          </li>
+          
+  <li class="text-center d-flex justify-content-around">
+    <div class="quantity d-flex align-items-center">
+      <button class="btn minus" (click)="minus()">-</button>
+      <input type="number" value="{{quantity}}" [(ngModel)]="quantity" >
+      <button class="btn plus" (click)="plus()">+</button>
+    </div>
+    <button class="btn add-to-cart-btn w-50 py-3" (click)="addToCart()">Add To Cart</button>
+  </li>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

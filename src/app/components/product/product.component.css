@@ -1,0 +1,103 @@
+.box{
+  width: 90%;
+  margin:  auto;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+}
+.box .row{
+  align-items: center;
+}
+
+
+img{
+  max-width: 250px;
+  
+}
+
+.img-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+p{
+  font-size: 14px;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+}
+@media (max-width:767px) {
+  .img-container{
+    margin-bottom: 20px;
+  }
+}
+.info{
+  background-color: #eee;
+  padding: 20px;
+}
+.title{
+  font-size: 22px;
+}
+.cate{
+  font-size: 13px;
+  font-weight: 600;
+}
+.cate img{
+  width: 13px;
+}
+
+.rate .count{
+  font-size: 12px;
+
+}
+.rating li{
+  color: gold;
+  margin-right: 5px;
+}
+
+ul{
+  padding: 0;
+}
+.add-to-cart-btn{
+  border-color: rgb(212, 1, 1);
+  color: rgb(212, 1, 1);
+  background-color: white;
+}
+.add-to-cart-btn:hover{
+  background-color: rgb(212, 1, 1);
+color: white;
+}
+.price{
+  font-size: 30px;
+  font-weight: 600;
+}
+li.rate{
+  display:flex;
+  justify-content: left;
+  gap: 10px;
+
+}
+.rateNumber{
+  font-size: 14px;
+}
+input{
+  text-align: center;
+  width: 50px;
+  background-color: transparent;
+  border: 0;
+}
+input:focus{
+  border: 0;
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

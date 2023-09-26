@@ -1,0 +1,21 @@
+.container{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap:20px;
+  justify-content: center;
+}
+span{
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+transition: .05s;
+}
+
+.category:hover{
+  border-bottom:3px solid rgb(212, 1, 1) ;
+  color: rgb(212, 1, 1);
+font-size: 19px;
+transition: .08s;
+
+}
